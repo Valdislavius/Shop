@@ -102,7 +102,7 @@ namespace Shop
                         Console.WriteLine("Придумайте логин: ");
                         newLogin = Console.ReadLine();
                     }
-                    
+
                     Console.WriteLine("Придумайте пароль");
                     newPassword = Console.ReadLine();
                     while (string.IsNullOrWhiteSpace(newPassword))
@@ -111,7 +111,7 @@ namespace Shop
                         Console.WriteLine("Придумайте пароль: ");
                         newPassword = Console.ReadLine();
                     }
-                    
+
 
                     InitUsers(newLogin, newPassword);
 
@@ -177,9 +177,9 @@ namespace Shop
                 string json = File.ReadAllText(FilePath);
                 users = JsonSerializer.Deserialize<Dictionary<string, string>>(json);
 
-                if(users.TryGetValue(login, out string storedPassword))
+                if (users.TryGetValue(login, out string storedPassword))
                 {
-                    if(password == storedPassword)
+                    if (password == storedPassword)
                     {
                         Console.WriteLine("Вы вошли!");
                     }
@@ -195,9 +195,8 @@ namespace Shop
             }
             catch (Exception ex)
             {
-                Console.WriteLine($"Произошла ошибка: {ex.Message}");
+                Console.WriteLine(ex.Message);
             }
-           
         }
     }
 }
