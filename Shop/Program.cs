@@ -1,6 +1,7 @@
 ﻿using Shop;
 
-var menu = new Menu();
+var userManager = new UserManager();
+var menu = new Menu(userManager);
 menu.Start();
 
 
